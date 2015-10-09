@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace RevStack.Pattern
 {
-    public interface IUnitOfWork<TEntity,TKey> where TEntity : class, IEntity<TKey>
+    public interface IUnitOfWork<TEntity,TKey> :IDisposable where TEntity : class, IEntity<TKey>
     {
         void Commit();
         Task CommitAsync();
